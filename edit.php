@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Muhammad Abdul Aziz</title>
+    <link rel="stylesheet" href="form.css">
   </head>
   <body>
-    <h3>Edit Data</h3>
 
     <?php
       $koneksi = mysqli_connect("localhost","root","","php-api");
@@ -19,14 +19,18 @@
       ?>
 
       <form action="update.php" method="post">
-        <table>
+        <table align="center">
           <tr>
-            <td>ID</td>
-            <td><input type="text" name="id" value="<?php echo $data['id']; ?>"></td>
+            <td colspan="2" style="background-color: #2196F3; color: #fff">
+              <h3><center><?php echo $data['id']; ?></center></h3>
+            </td>
           </tr>
           <tr>
             <td>Username</td>
-            <td><input type="text" name="username" value="<?php echo $data['username']; ?>"></td>
+            <td>
+              <input type="text" name="username" value="<?php echo $data['username']; ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+            </td>
           </tr>
           <tr>
             <td>Password</td>
@@ -45,8 +49,9 @@
             <td><input type="text" name="fullname" value="<?php echo $data['fullname']; ?>"></td>
           </tr>
           <tr>
-            <td></td>
-            <td><button type="submit" value="Simpan">SIMPAN</button>
+            <td colspan="2">
+              <center><button type="submit" value="Simpan">SIMPAN</button></center>
+            </td>
           </tr>
         </table>
       </form>
